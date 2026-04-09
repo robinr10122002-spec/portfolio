@@ -1,0 +1,159 @@
+/* --- 1. Global Setup: The Carbon Void --- */
+body {
+  margin: 0;
+  background-color: #050505;
+  color: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- 2. About: The "Prismatic" Name --- */
+.highlight-name {
+  font-size: clamp(3rem, 12vw, 7.5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  /* UNIQUE PROPERTY: Creates a metallic, shimmering color effect */
+  background: linear-gradient(
+    45deg, 
+    #3b82f6 0%, 
+    #a855f7 50%, 
+    #3b82f6 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+/* --- 3. Contact: The "Refractive" Card --- */
+.contact-grid {
+    margin-top:3rem;
+    padding: 3rem;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.contact-card {
+  position: relative;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  /* UNIQUE PROPERTY: Blurs and shifts the color of the background */
+  backdrop-filter: blur(12px) hue-rotate(90deg);
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(59, 130, 246, 0.5);
+  /* UNIQUE PROPERTY: Makes the card appear to 'light up' from behind */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+/* --- 4. Skills: The "Square-Grid" Badge --- */
+.skill-card {
+  /* UNIQUE PROPERTY: Keeps the badge a perfect square regardless of size */
+  aspect-ratio: 1 / 1;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0f0f0f;
+  border: 1px solid #1a1a1a;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  /* UNIQUE PROPERTY: Inverts the entire card color scheme */
+  filter: invert(1);
+  border-radius: 50%; /* Morphs square to circle on hover */
+}
+
+
+/* --- 4. Skills: The "3D-Flip" Kinetic Badge --- */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  /* UNIQUE PROPERTY: Sets the 'depth' for the 3D flip */
+  perspective: 1000px;
+}
+
+.skill-card {
+  width: 120px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  /* UNIQUE PROPERTY: Required for the front and back to stay in 3D space */
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  /* UNIQUE PROPERTY: Flips the card 180 degrees on hover */
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Face Logic */
+.skill-card-front, .skill-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* UNIQUE PROPERTY: Hides the back of the card when it's turned away */
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-card-front {
+  background: #0f0f0f;
+  color: #fff;
+}
+
+.skill-card-back {
+  background: #3b82f6; /* Matching your Cyber Blue accent */
+  color: #000;
+  font-weight: 800;
+  /* UNIQUE PROPERTY: Positions the back face so it's readable after the flip */
+  transform: rotateY(180deg);
+}
+
+.skill-card img {
+  width: 40px;
+  height: 40px;
+  /* UNIQUE PROPERTY: Adds depth to the icon itself */
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
+}
+.about-content{
+    /* padding-left: 25rem; */
+    text-align: center;
+}
+.highlight-domain{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+     background: linear-gradient(
+    45deg, 
+    #11f9f1 0%, 
+    #2a6f76 50%, 
+    #0aa9ee 100%
+  );
+   background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+}
