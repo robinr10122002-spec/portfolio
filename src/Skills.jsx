@@ -10,7 +10,10 @@ export function Skills() {
   ];
 
   return (
+    <>
+    <h1 className="skills-heading"> My Skills</h1>
     <div className="skills-container">
+        
       {skills.map((skill, index) => (
         <div key={index} className="skill-card">
           <img src={skill.img} alt={skill.name} />
@@ -18,5 +21,6 @@ export function Skills() {
         </div>
       ))}
     </div>
+    </>
   );
 }
